@@ -14,6 +14,9 @@ D:\ai_sound
  ┣ requirements.txt         # Gerekli Python kütüphaneleri
  ┗ /venv                    # Sanal ortam klasörü
 
+
+
+
 D:\ai_sound_app
  ┣ lib/
  ┃ ┣ screens/
@@ -22,6 +25,9 @@ D:\ai_sound_app
  ┃ ┗ main.dart
  ┗ pubspec.yaml
 
+
+ 
+
 2. Gerekli Kurulumlar
 Python tarafı
 cd D:\ai_sound
@@ -29,9 +35,15 @@ python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 
+
+
+
 Flutter tarafı
 cd D:\ai_sound_app
 flutter pub get
+
+
+
 
 3. Flask Sunucusunu Başlatma
 3.1. Flask dosyası (ai_server.py)
@@ -40,6 +52,8 @@ from flask_cors import CORS
 import tensorflow as tf
 import numpy as np
 import librosa, tempfile, os
+
+
 
 app = Flask(__name__)
 CORS(app)
@@ -69,6 +83,8 @@ def predict():
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 
+    
+
 3.2. Sunucuyu çalıştır
 cd D:\ai_sound
 venv\Scripts\activate
@@ -79,6 +95,8 @@ Eğer başarıyla başladıysa:
 
 Running on http://127.0.0.1:5000
 Running on http://192.168.1.34:5000
+
+
 
 4. Flutter Tarafı Çalıştırma
 4.1. Android izinleri
