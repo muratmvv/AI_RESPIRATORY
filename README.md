@@ -85,20 +85,20 @@ if __name__ == "__main__":
 
     
 
-3.2. Sunucuyu çalıştır
+3.2. Sunucuyu çalıştırma kısmı
 cd D:\ai_sound
 venv\Scripts\activate
 python ai_server.py
 
 
-Eğer başarıyla başladıysa:
+Eğer başarıyla sunucu başladıysa:
 
 Running on http://127.0.0.1:5000
 Running on http://192.168.1.34:5000
 
 
 
-4. Flutter Tarafı Çalıştırma
+4. Flutter Tarafı Çalıştırma kısmı
 4.1. Android izinleri
 
 android/app/src/main/AndroidManifest.xml içine ekle:
@@ -107,7 +107,7 @@ android/app/src/main/AndroidManifest.xml içine ekle:
 <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
 <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
-4.2. HTTP bağlantısına izin ver
+4.2. HTTP bağlantısına izin verme 
 
 android/app/src/main/res/xml/network_security_config.xml:
 
@@ -136,17 +136,17 @@ final uri = Uri.parse("http://192.168.1.34:5000/predict");
 
 5. Çalıştırma Adımları
 
-Flask sunucusunu başlat:
+Flask sunucusunu başlatma:
 
 python ai_server.py
 
 
-Flutter uygulamasını başlat:
+Flutter uygulamasını başlatma:
 
 flutter run
 
 
-Uygulamada “Hastalık Analizi” sayfasına git.
+Uygulamada “Hastalık Analizi” sayfasına gitme.
 
 “Kayda Başla” → nefes al/ver → “Kaydı Durdur”.
 
