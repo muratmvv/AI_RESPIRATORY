@@ -14,7 +14,7 @@ SAMPLE_RATE = 22050
 N_MFCC = 13
 DURATION_SEC = 5.0
 
-# === Modeli Yükle ===
+# === Modeli Yükleme kısmı ===
 print("[INFO] Model yükleniyor...")
 model = tf.keras.models.load_model(MODEL_PATH)
 print("[OK] Model yüklendi:", MODEL_PATH)
@@ -24,7 +24,7 @@ def extract_features(file_path):
     y, sr = librosa.load(file_path, sr=SAMPLE_RATE, mono=True)
     target_len = int(SAMPLE_RATE * DURATION_SEC)
 
-    # Ses uzunluğu sabitle (5 saniye)
+    
     if len(y) < target_len:
         y = np.pad(y, (0, target_len - len(y)))
     else:
@@ -57,7 +57,7 @@ def predict():
         if not file.filename.endswith(".wav"):
             return jsonify({"error": "Yalnızca .wav dosyaları destekleniyor"}), 400
 
-        # Dosyayı kaydet
+       
         filename = secure_filename(file.filename)
         file_path = os.path.join(UPLOAD_DIR, filename)
         file.save(file_path)
@@ -89,3 +89,4 @@ def predict():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)
+
